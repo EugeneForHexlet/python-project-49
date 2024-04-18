@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 import brain_games.logic
 
- 
-def main(): 
+
+def main():
     brain_games.logic.user_welcome()
 
 

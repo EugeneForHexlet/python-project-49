@@ -3,7 +3,8 @@ import prompt
 import random
 import brain_games.logic
 
-def main(): 
+
+def main():
     name = brain_games.logic.user_welcome()
     print('Answer "yes" if the number is even, otherwise answer "no".')
 
