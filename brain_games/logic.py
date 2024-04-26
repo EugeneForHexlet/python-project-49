@@ -13,4 +13,4 @@ def user__win(name):
 
 
 def user__error(answer, result, name):
-    print(f"'{answer}' is wrong answer ;(. Correct answer was '{result}'.\nLet's try again, '{name}'!")
+    print(f"'{answer}' is wrong answer ;(. Correct answer was '{result}'.\nLet's try again, {name}!")
