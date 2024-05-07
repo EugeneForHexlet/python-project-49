@@ -13,18 +13,18 @@ def main():
 
     i = 0
     while i < 3:
-        oneRandNumber = random.randint(1, 10)
-        twoRandNumber = random.randint(1, 10)
+        one_rand_number = random.randint(1, 10)
+        two_rand_number = random.randint(1, 10)
         randSymbol = random.choice(symbols)
 
-        expression = f'{oneRandNumber} {randSymbol} {twoRandNumber}'
+        expression = f'{one_rand_number} {randSymbol} {two_rand_number}'
 
         if randSymbol == '+':
-            result = oneRandNumber + twoRandNumber
+            result = one_rand_number + two_rand_number
         elif randSymbol == '-':
-            result = oneRandNumber - twoRandNumber
+            result = one_rand_number - two_rand_number
         elif randSymbol == '*':
-            result = oneRandNumber * twoRandNumber
+            result = one_rand_number * two_rand_number
 
         print('Question: ' + expression)
         answer = prompt.string('Your answer: ')
@@ -32,9 +32,9 @@ def main():
         if str(result) == answer:
             print('Correct!')
             if i == 2:
-                brain_games.logic.user__win(name)
+                brain_games.logic.user_win(name)
         else:
-            brain_games.logic.user__error(answer, result, name)
+            brain_games.logic.user_error(answer, result, name)
             break
 
         i = i + 1

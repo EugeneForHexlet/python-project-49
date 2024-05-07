@@ -10,17 +10,17 @@ def main():
 
     i = 0
     while i < 3:
-        randNumber = random.randint(1, 10)
-        print('Question: ' + str(randNumber))
+        rand_number = random.randint(1, 10)
+        print('Question: ' + str(rand_number))
         answer = prompt.string('Your answer: ')
-        result = 'yes' if randNumber % 2 == 0 else 'no'
+        result = 'yes' if rand_number % 2 == 0 else 'no'
 
-        if randNumber % 2 == 0 and answer == 'yes' or randNumber % 2 != 0 and answer == 'no':
+        if rand_number % 2 == 0 and answer == 'yes' or rand_number % 2 != 0 and answer == 'no':
             print('Correct!')
             if i == 2:
-                brain_games.logic.user__win(name)
+                brain_games.logic.user_win(name)
         else:
-            brain_games.logic.user__error(answer, result, name)
+            brain_games.logic.user_error(answer, result, name)
             break
 
         i = i + 1

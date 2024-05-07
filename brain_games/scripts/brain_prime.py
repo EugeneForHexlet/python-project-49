@@ -10,8 +10,8 @@ def main():
 
     i = 0
     while i < 3:
-        randNumber = random.randint(1, 10)
-        print('Question: ' + str(randNumber))
+        rand_number = random.randint(1, 10)
+        print('Question: ' + str(rand_number))
         answer = prompt.string('Your answer: ')
 
         def justNumber(number):
@@ -28,14 +28,14 @@ def main():
                 i += 6
             return 'yes'
 
-        result = justNumber(randNumber)
+        result = justNumber(rand_number)
 
         if result == answer:
             print('Correct!')
             if i == 2:
-                brain_games.logic.user__win(name)
+                brain_games.logic.user_win(name)
         else:
-            brain_games.logic.user__error(answer, result, name)
+            brain_games.logic.user_error(answer, result, name)
             break
 
         i = i + 1

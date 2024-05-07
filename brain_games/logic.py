@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import prompt
 
 
@@ -8,9 +9,9 @@ def user_welcome():
     return name
 
 
-def user__win(name):
+def user_win(name):
     print('Congratulations, ' + name + '!')
 
 
-def user__error(answer, result, name):
+def user_error(answer, result, name):
     print(f"'{answer}' is wrong answer ;(. Correct answer was '{result}'.\nLet's try again, {name}!")

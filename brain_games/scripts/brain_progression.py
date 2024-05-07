@@ -11,41 +11,41 @@ def main():
     i = 0
     while i < 3:
 
-        randStart = random.randint(1, 20)
-        randStep = random.randint(2, 7)
-        randHidden = random.randint(1, 9)
-        arrProgresion = [randStart]
+        rand_start = random.randint(1, 20)
+        rand_step = random.randint(2, 7)
+        rand_hidden = random.randint(1, 9)
+        arr_progresion = [rand_start]
 
-        def progressionArr(step):
+        def progression_arr(step):
             i = 1
             while i < 10:
-                acc = arrProgresion[len(arrProgresion) - 1] + step
-                arrProgresion.extend([acc])
+                acc = arr_progresion[len(arr_progresion) - 1] + step
+                arr_progresion.extend([acc])
                 i = i + 1
 
-            return arrProgresion
+            return arr_progresion
 
-        progressionArr(randStep)
-        result = arrProgresion[randHidden]
-        arrProgresion.pop(randHidden)
-        arrProgresion.insert(randHidden, '...')
+        progression_arr(rand_step)
+        result = arr_progresion[rand_hidden]
+        arr_progresion.pop(rand_hidden)
+        arr_progresion.insert(rand_hidden, '...')
 
-        def progressionStr(arr):
+        def progression_str(arr):
             resultStr = ''
             for el in arr:
                 resultStr = resultStr + str(el) + ' '
             return resultStr
 
-        progressionRes = progressionStr(arrProgresion)
-        print('Question: ' + progressionRes)
+        progression_res = progression_str(arr_progresion)
+        print('Question: ' + progression_res)
         answer = prompt.string('Your answer: ')
 
         if str(result) == answer:
             print('Correct!')
             if i == 2:
-                brain_games.logic.user__win(name)
+                brain_games.logic.user_win(name)
         else:
-            brain_games.logic.user__error(answer, result, name)
+            brain_games.logic.user_error(answer, result, name)
             break
 
         i = i + 1

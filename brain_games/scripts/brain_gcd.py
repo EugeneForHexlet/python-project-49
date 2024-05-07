@@ -10,19 +10,19 @@ def main():
 
     i = 0
     while i < 3:
-        firstRandNumber = random.randint(1, 20)
-        secondRandNumber = random.randint(1, 20)
-        print(f"Question: {firstRandNumber} {secondRandNumber}")
+        one_rand_number = random.randint(1, 20)
+        two_rand_number = random.randint(1, 20)
+        print(f"Question: {one_rand_number} {two_rand_number}")
         answer = prompt.string('Your answer: ')
 
-        arrayNumbersSort = sorted([firstRandNumber, secondRandNumber])
+        array_numbers_sort = sorted([one_rand_number, two_rand_number])
 
-        if arrayNumbersSort[1] % arrayNumbersSort[0] == 0:
-            result = arrayNumbersSort[0]
+        if array_numbers_sort[1] % array_numbers_sort[0] == 0:
+            result = array_numbers_sort[0]
         else:
-            devider = arrayNumbersSort[0] // 2
+            devider = array_numbers_sort[0] // 2
             while devider > 0:
-                if arrayNumbersSort[0] % devider == 0 and arrayNumbersSort[1] % devider == 0:
+                if array_numbers_sort[0] % devider == 0 and array_numbers_sort[1] % devider == 0:
                     result = devider
                     break
                 devider = devider - 1
@@ -30,9 +30,9 @@ def main():
         if int(answer) == result:
             print('Correct!')
             if i == 2:
-                brain_games.logic.user__win(name)
+                brain_games.logic.user_win(name)
         else:
-            brain_games.logic.user__error(answer, result, name)
+            brain_games.logic.user_error(answer, result, name)
             break
 
         i = i + 1
