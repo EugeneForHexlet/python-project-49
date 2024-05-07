@@ -6,7 +6,7 @@ import brain_games.logic
 
 def main():
     name = brain_games.logic.user_welcome()
-    print('What is the result of the expression?')
+    print('What number is missing in the progression?')
 
     i = 0
     while i < 3:
