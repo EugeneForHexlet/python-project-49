@@ -28,7 +28,7 @@ def main():
         progression_arr(rand_step)
         result = arr_progresion[rand_hidden]
         arr_progresion.pop(rand_hidden)
-        arr_progresion.insert(rand_hidden, '...')
+        arr_progresion.insert(rand_hidden, '..')
 
         def progression_str(arr):
             resultStr = ''
