@@ -1,3 +1,51 @@
+# Проект: Игры разума
+
+## Минимальные требования:
+
+* Python минимальной версии 3.6
+* pip минимальной версии 19
+
+
+## Установка
+ 
+```bash
+pip install --user
+```
+
+## Запуск
+
+Игра: «Проверка на чётность»
+
+```bash
+brain-even
+```
+
+Игра: «Калькулятор»
+
+```bash
+brain-calc
+```
+
+Игра: «НОД»
+
+```bash
+brain-gcd
+```
+
+Игра: «Арифметическая прогрессия»
+
+```bash
+brain-progression
+```
+
+Игра: «Простое ли число?»
+
+```bash
+brain-prime
+```
+
+
+
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/EugeneForHexlet/python-project-49/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/EugeneForHexlet/python-project-49/actions)
 
@@ -12,3 +60,9 @@
 [![asciicast](https://asciinema.org/a/DqmUjT5XQHr19r3hXnyjg9Z46.svg)](https://asciinema.org/a/DqmUjT5XQHr19r3hXnyjg9Z46)
 
 [![asciicast](https://asciinema.org/a/tqqLxVF700bYGZvHgRoGzAvxY.svg)](https://asciinema.org/a/tqqLxVF700bYGZvHgRoGzAvxY)
+
+
+
+## Автор:
+
+- [@EugeneForHexlet](https://www.github.com/EugeneForHexlet)
