@@ -16,7 +16,7 @@ def user_win(name):
 
 def user_error(reply, result, name):
     rpl_tmpl = 'is wrong answer ;(. Correct answer was'
-    print(f"'{reply}' '{rpl_tmpl}' '{result}'.\nLet's try again, {name}!")
+    print(f"'{reply}' {rpl_tmpl} '{result}'.\nLet's try again, {name}!")
 
 
 # Движок игры brain_calc.py
@@ -162,7 +162,8 @@ def brain_progression_question():
     rand_hidden = random.randint(1, 9)
 
     progression = brain_progression_generate(rand_start, rand_step)
-    result = progression[rand_hidden]
+    result_int = progression[rand_hidden]
+    result = str(result_int)
     prog_str = brain_progression_string(progression, rand_hidden)
 
     print('Question: ' + prog_str)
