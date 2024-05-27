@@ -108,13 +108,14 @@ def brain_gcd_func(name):
 
 # Движок игры brain_prime.py
 def brain_prime_just_number(number):
-    if number <= 1 or number % 2 == 0 or number % 3 == 0:
+    if number <= 1:
         return 'no'
-    if number <= 3:
+    elif number <= 3:
         return 'yes'
+    elif number % 2 == 0 or number % 3 == 0:
+        return 'no'
 
-    i = 5
-    while i * i <= number:
+    for i in range(5, int(number**0.5) + 1, 6):
         if number % i == 0 or number % (i + 2) == 0:
             return 'no'
         i += 6
