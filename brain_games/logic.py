@@ -70,8 +70,7 @@ def brain_even_gen():
 def brain_even_func(name):
     print('Answer "yes" if the number is even, otherwise answer "no".')
 
-    i = 0
-    while i < 3:
+    for i in range(3):
         reply, result, rnd_int = brain_even_gen()
 
         if (rnd_int % 2 == 0) == (reply == 'yes'):
@@ -81,8 +80,6 @@ def brain_even_func(name):
         else:
             user_error(reply, result, name)
             break
-
-        i = i + 1
 
 
 # Движок игры brain_gcd.py
@@ -103,9 +100,7 @@ def brain_gcd_question():
 def brain_gcd_func(name):
     print('Find the greatest common divisor of given numbers.')
 
-    i = 0
-    while i < 3:
-
+    for i in range(3):
         one_rand_number, two_rand_number, reply = brain_gcd_question()
         result = brain_gcd_dev(one_rand_number, two_rand_number)
 
@@ -116,8 +111,6 @@ def brain_gcd_func(name):
         else:
             user_error(reply, result, name)
             break
-
-        i = i + 1
 
 
 # Движок игры brain_prime.py
@@ -152,8 +145,7 @@ def brain_prime_just_number(number):
 def brain_prime_func(name):
     print('Answer "yes" if given number is prime. Otherwise answer "no".')
 
-    i = 0
-    while i < 3:
+    for i in range(3):
         reply, rnd_int = brain_prime_question()
         result = brain_prime_just_number(rnd_int)
 
@@ -164,8 +156,6 @@ def brain_prime_func(name):
         else:
             user_error(reply, result, name)
             break
-
-        i = i + 1
 
 
 # Движок игры brain_progression.py
@@ -199,8 +189,7 @@ def brain_progression_question():
 def brain_progression_func(name):
     print('What number is missing in the progression?')
 
-    i = 0
-    while i < 3:
+    for i in range(3):
         reply, result = brain_progression_question()
 
         if str(result) == reply:
@@ -210,5 +199,3 @@ def brain_progression_func(name):
         else:
             user_error(reply, result, name)
             break
-
-        i = i + 1
