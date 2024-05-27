@@ -107,6 +107,12 @@ def brain_gcd_func(name):
 
 
 # Движок игры brain_prime.py
+def brain_prime_question():
+    rnd_int = random.randint(1, 10)
+    print('Question: ' + str(rnd_int))
+    reply = prompt.string('Your answer: ')
+    return reply, rnd_int
+
 
 def brain_prime_check_number(number):
     if number <= 1:
@@ -134,10 +140,7 @@ def brain_prime_func(name):
 
     i = 0
     while i < 3:
-        rnd_int = random.randint(1, 10)
-        print('Question: ' + str(rnd_int))
-        reply = prompt.string('Your answer: ')
-
+        reply, rnd_int = brain_prime_question()
         result = brain_prime_just_number(rnd_int)
 
         if result == reply:
