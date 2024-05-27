@@ -82,8 +82,8 @@ def brain_gcd_question():
     one_rand_number = random.randint(1, 20)
     two_rand_number = random.randint(1, 20)
     print(f"Question: {one_rand_number} {two_rand_number}")
-    answer = prompt.string('Your answer: ')
-    return one_rand_number, two_rand_number, answer
+    reply = prompt.string('Your answer: ')
+    return one_rand_number, two_rand_number, reply
 
 
 def brain_gcd_func(name):
@@ -92,33 +92,40 @@ def brain_gcd_func(name):
     i = 0
     while i < 3:
 
-        one_rand_number, two_rand_number, answer = brain_gcd_question()
+        one_rand_number, two_rand_number, reply = brain_gcd_question()
         result = brain_gcd_dev(one_rand_number, two_rand_number)
 
-        if int(answer) == result:
+        if int(reply) == result:
             print('Correct!')
             if i == 2:
                 user_win(name)
         else:
-            user_error(answer, result, name)
+            user_error(reply, result, name)
             break
 
         i = i + 1
 
 
 # Движок игры brain_prime.py
-def brain_prime_just_number(number):
+
+def brain_prime_check_number(number):
     if number <= 1:
         return 'no'
     elif number <= 3:
         return 'yes'
     elif number % 2 == 0 or number % 3 == 0:
         return 'no'
+    return None
+
+
+def brain_prime_just_number(number):
+    res = brain_prime_check_number(number)
+    if res is not None:
+        return res
 
     for i in range(5, int(number**0.5) + 1, 6):
         if number % i == 0 or number % (i + 2) == 0:
             return 'no'
-        i += 6
     return 'yes'
 
 
