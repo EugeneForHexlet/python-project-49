@@ -1,12 +1,10 @@
 #!/usr/bin/env python3
 import brain_games.logic
 
-symbols = ['+', '-', '*']
-
 
 def main():
     name = brain_games.logic.user_welcome()
-    brain_games.logic.brain_calc_func(name, symbols)
+    brain_games.logic.brain_calc_func(name)
 
 
 if __name__ == '__main__':

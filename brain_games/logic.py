@@ -20,23 +20,32 @@ def user_error(reply, result, name):
 
 
 # Движок игры brain_calc.py
-def brain_calc_func(name, symbols):
+def brain_calc_rand():
+    symbols = ['+', '-', '*']
+    one_rnd_int = random.randint(1, 10)
+    two_rnd_int = random.randint(1, 10)
+    rand_symbol = random.choice(symbols)
+    expression = f'{one_rnd_int} {rand_symbol} {two_rnd_int}'
+    return one_rnd_int, two_rnd_int, rand_symbol, expression
+
+
+def brain_calc_check():
+    one_rnd_int, two_rnd_int, rand_symbol, expression = brain_calc_rand()
+
+    if rand_symbol == '+':
+        result = one_rnd_int + two_rnd_int
+    elif rand_symbol == '-':
+        result = one_rnd_int - two_rnd_int
+    elif rand_symbol == '*':
+        result = one_rnd_int * two_rnd_int
+    return result, expression
+
+
+def brain_calc_func(name):
     print('What is the result of the expression?')
 
     for _ in range(3):
-        one_rnd_int = random.randint(1, 10)
-        two_rnd_int = random.randint(1, 10)
-        rand_symbol = random.choice(symbols)
-
-        expression = f'{one_rnd_int} {rand_symbol} {two_rnd_int}'
-
-        if rand_symbol == '+':
-            result = one_rnd_int + two_rnd_int
-        elif rand_symbol == '-':
-            result = one_rnd_int - two_rnd_int
-        elif rand_symbol == '*':
-            result = one_rnd_int * two_rnd_int
-
+        result, expression = brain_calc_check()
         print('Question: ' + expression)
         reply = prompt.string('Your answer: ')
 
@@ -50,22 +59,27 @@ def brain_calc_func(name, symbols):
 
 
 # Движок игры brain_even.py
+def brain_even_gen():
+    rnd_int = random.randint(1, 10)
+    print('Question: ' + str(rnd_int))
+    reply = prompt.string('Your answer: ')
+    result = 'yes' if rnd_int % 2 == 0 else 'no'
+    return reply, result, rnd_int
+
+
 def brain_even_func(name):
     print('Answer "yes" if the number is even, otherwise answer "no".')
 
     i = 0
     while i < 3:
-        rnd_int = random.randint(1, 10)
-        print('Question: ' + str(rnd_int))
-        rpl = prompt.string('Your answer: ')
-        result = 'yes' if rnd_int % 2 == 0 else 'no'
+        reply, result, rnd_int = brain_even_gen()
 
-        if (rnd_int % 2 == 0) == (rpl == 'yes'):
+        if (rnd_int % 2 == 0) == (reply == 'yes'):
             print('Correct!')
             if i == 2:
                 user_win(name)
         else:
-            user_error(rpl, result, name)
+            user_error(reply, result, name)
             break
 
         i = i + 1
