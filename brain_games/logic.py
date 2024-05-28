@@ -41,13 +41,18 @@ def brain_calc_check():
     return result, expression
 
 
+def brain_calc_question():
+    result, expression = brain_calc_check()
+    print('Question: ' + expression)
+    reply = prompt.string('Your answer: ')
+    return reply, result
+
+
 def brain_calc_func(name):
     print('What is the result of the expression?')
 
     for _ in range(3):
-        result, expression = brain_calc_check()
-        print('Question: ' + expression)
-        reply = prompt.string('Your answer: ')
+        reply, result = brain_calc_question()
 
         if str(result) == reply:
             print('Correct!')
