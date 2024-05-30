@@ -147,15 +147,6 @@ def brain_prime_just_number(number):
     return 'yes'
 
 
-def brain_prime_func_check(reply, result, name, i):
-    if result == reply:
-        print('Correct!')
-        if i == 2:
-            user_win(name)
-    else:
-        user_error(reply, result, name)
-
-
 def brain_prime_func(name):
     print('Answer "yes" if given number is prime. Otherwise answer "no".')
 
@@ -163,7 +154,13 @@ def brain_prime_func(name):
         reply, rnd_int = brain_prime_question()
         result = brain_prime_just_number(rnd_int)
 
-        brain_prime_func_check(reply, result, name, i)
+        if result == reply:
+            print('Correct!')
+            if i == 2:
+                user_win(name)
+        else:
+            user_error(reply, result, name)
+            break
 
 
 # Движок игры brain_progression.py
@@ -197,13 +194,17 @@ def brain_progression_question():
 def brain_progression_func(name):
     print('What number is missing in the progression?')
 
-    for i in range(3):
+    def check_answer():
         reply, result = brain_progression_question()
-
         if str(result) == reply:
             print('Correct!')
-            if i == 2:
-                user_win(name)
+            return True
         else:
             user_error(reply, result, name)
+            return False
+
+    for i in range(3):
+        if not check_answer():
             break
+        if i == 2:
+            user_win(name)
