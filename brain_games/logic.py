@@ -199,7 +199,7 @@ def check_answer(name):
     else:
         user_error(reply, result, name)
         return False
-        
+
 
 def brain_progression_func(name):
     print('What number is missing in the progression?')
