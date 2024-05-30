@@ -191,20 +191,21 @@ def brain_progression_question():
     return result, reply
 
 
+def check_answer(name):
+    reply, result = brain_progression_question()
+    if str(result) == reply:
+        print('Correct!')
+        return True
+    else:
+        user_error(reply, result, name)
+        return False
+        
+
 def brain_progression_func(name):
     print('What number is missing in the progression?')
 
-    def check_answer():
-        reply, result = brain_progression_question()
-        if str(result) == reply:
-            print('Correct!')
-            return True
-        else:
-            user_error(reply, result, name)
-            return False
-
     for i in range(3):
-        if not check_answer():
+        if not check_answer(name):
             break
         if i == 2:
             user_win(name)
