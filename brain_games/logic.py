@@ -147,6 +147,15 @@ def brain_prime_just_number(number):
     return 'yes'
 
 
+def brain_prime_func_check(reply, result, name, i):
+    if result == reply:
+        print('Correct!')
+        if i == 2:
+            user_win(name)
+    else:
+        user_error(reply, result, name)
+
+
 def brain_prime_func(name):
     print('Answer "yes" if given number is prime. Otherwise answer "no".')
 
@@ -154,13 +163,7 @@ def brain_prime_func(name):
         reply, rnd_int = brain_prime_question()
         result = brain_prime_just_number(rnd_int)
 
-        if result == reply:
-            print('Correct!')
-            if i == 2:
-                user_win(name)
-        else:
-            user_error(reply, result, name)
-            break
+        brain_prime_func_check(reply, result, name, i)
 
 
 # Движок игры brain_progression.py
