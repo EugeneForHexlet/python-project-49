@@ -72,19 +72,27 @@ def brain_even_gen():
     return reply, result, rnd_int
 
 
+def brain_even_answer_check(name):
+    reply, result, rnd_int = brain_even_gen()
+    if (rnd_int % 2 == 0) == (reply == 'yes'):
+        print('Correct!')
+        return True
+    else:
+        user_error(reply, result, name)
+    return False
+
+
+def brain_even_loop(name):
+    for i in range(3):
+        if not brain_even_answer_check(name):
+            break
+        if i == 2:
+            user_win(name)
+
+
 def brain_even_func(name):
     print('Answer "yes" if the number is even, otherwise answer "no".')
-
-    for i in range(3):
-        reply, result, rnd_int = brain_even_gen()
-
-        if (rnd_int % 2 == 0) == (reply == 'yes'):
-            print('Correct!')
-            if i == 2:
-                user_win(name)
-        else:
-            user_error(reply, result, name)
-            break
+    brain_even_loop(name)
 
 
 # Движок игры brain_gcd.py
