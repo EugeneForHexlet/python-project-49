@@ -102,20 +102,28 @@ def brain_gcd_question():
     return one_rand_number, two_rand_number, reply
 
 
+def brain_gcd_answer_check(name):
+    one_rand_number, two_rand_number, reply = brain_gcd_question()
+    result = brain_gcd_dev(one_rand_number, two_rand_number)
+    if int(reply) == result:
+        print('Correct!')
+        return True
+    else:
+        user_error(reply, result, name)
+        return False
+
+
+def brain_gcd_loop(name):
+    for i in range(3):
+        if not brain_gcd_answer_check(name):
+            break
+        if i == 2:
+            user_win(name)
+
+
 def brain_gcd_func(name):
     print('Find the greatest common divisor of given numbers.')
-
-    for i in range(3):
-        one_rand_number, two_rand_number, reply = brain_gcd_question()
-        result = brain_gcd_dev(one_rand_number, two_rand_number)
-
-        if int(reply) == result:
-            print('Correct!')
-            if i == 2:
-                user_win(name)
-        else:
-            user_error(reply, result, name)
-            break
+    brain_gcd_loop(name)
 
 
 # Движок игры brain_prime.py
@@ -158,17 +166,17 @@ def brain_prime_answer_check(name):
         return False
 
 
+def brain_prime_game_loop(name):
+    for i in range(3):
+        if not brain_prime_answer_check(name):
+            break
+        if i == 2:
+            user_win(name)
+
+
 def brain_prime_func(name):
     print('Answer "yes" if given number is prime. Otherwise answer "no".')
-
-    def brain_prime_game_loop():
-        for i in range(3):
-            if not brain_prime_answer_check(name):
-                break
-            if i == 2:
-                user_win(name)
-
-    brain_prime_game_loop()
+    brain_prime_game_loop(name)
 
 
 # Движок игры brain_progression.py
