@@ -3,6 +3,11 @@ import prompt
 import random
 
 
+def start_game(game_func, *args):
+    name = user_welcome()
+    game_func(name, *args)
+
+
 def user_welcome():
     print('Welcome to the Brain Games!')
     name = prompt.string('May I have your name? ')

@@ -3,8 +3,7 @@ import brain_games.logic
 
 
 def main():
-    name = brain_games.logic.user_welcome()
-    brain_games.logic.brain_progression_func(name)
+    brain_games.logic.start_game(brain_games.logic.brain_progression_func)
 
 
 if __name__ == '__main__':
